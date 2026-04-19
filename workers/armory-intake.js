@@ -137,6 +137,12 @@ export default {
       return jsonResponse({ success: false, message: 'Invalid request body' }, 400, safeOrigin);
     }
 
+    // Honeypot — real users leave this empty; bots fill every field
+    if (body.website && String(body.website).trim() !== '') {
+      console.log('Honeypot triggered, silently accepting to avoid tipping off bots');
+      return jsonResponse({ success: true, message: 'Application received' }, 200, safeOrigin);
+    }
+
     if (!body.name || !body.email) {
       return jsonResponse({ success: false, message: 'Name and email are required' }, 400, safeOrigin);
     }

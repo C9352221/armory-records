@@ -11,6 +11,14 @@
 <meta property="og:description" content="Boutique wellness and longevity consulting for discerning clientele. Miami Beach. By referral only.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://armoryrecords.net/">
+<meta property="og:image" content="https://armoryrecords.net/assets/nutrition.jpg">
+<meta property="og:image:alt" content="Armory Records Inc — Wellness & Longevity Consulting">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Armory Records Inc — Wellness &amp; Longevity Consulting">
+<meta name="twitter:description" content="Boutique wellness and longevity consulting. Miami Beach. By referral only.">
+<meta name="twitter:image" content="https://armoryrecords.net/assets/nutrition.jpg">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +38,7 @@
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#approach">Approach</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact">Apply</a>
     </nav>
   </div>
 </header>
@@ -43,7 +51,7 @@
       <h1 class="hero-title">Be better every day.</h1>
       <p class="hero-lede">Optimize your longevity utilizing cutting-edge innovation. A private practice serving a small circle of clients who expect the very best of themselves.</p>
       <div class="hero-meta">
-        <span>Established 2015</span>
+        <span>A decade of practice</span>
         <span class="dot" aria-hidden="true">•</span>
         <span>By referral only</span>
       </div>
@@ -127,6 +135,10 @@
       <p class="contact-lede">Armory Records accepts a limited number of new clients each year, primarily through personal referrals. If you'd like to explore working together, please tell us a little about yourself. We respond to every application personally.</p>
 
       <form id="applicationForm" class="application-form" novalidate>
+        <div class="honeypot" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
         <div class="form-row">
           <div class="form-field">
             <label for="name">Name</label>
@@ -195,6 +207,7 @@
       referredBy: document.getElementById('referredBy').value.trim(),
       services: document.getElementById('services').value,
       message: document.getElementById('message').value.trim(),
+      website: document.getElementById('website').value,
     };
 
     if (!data.name || !data.email) {
